@@ -39,3 +39,17 @@ class TestArrayKata(TestCase):
 		self.assertRaises(TypeError, elementExist, "5", "yer")
 
 	
+	def test_that_print_odd_index_values_exist(self):
+		print_odd_index_values([1,2,3,4])
+	
+	def test_that_print_odd_index_values_returns_correct_values(self):
+		actual_result = print_odd_index_values([1,2,3,4,5,6,7,8,9])
+		expected_result = [2,4,6,8]
+		self.assertEqual(actual_result, expected_result)
+
+	def test_that_print_odd_index_values_raise_error_if_list_not_passed(self):
+		self.assertRaises(TypeError, print_odd_index_values, "33")
+
+
+
+	
