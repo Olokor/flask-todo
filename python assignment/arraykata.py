@@ -1,10 +1,11 @@
 def get_max(array:list):
 	if type(array) is list:
-		max_number = array[0]
-		for i in array:
-			if i > max_number:
-				max_number = i
-		return max_number
+		if array_contain_only_numbers(array):
+			max_number = array[0]
+			for i in array:
+				if i > max_number:
+					max_number = i
+			return max_number
 	raise TypeError
 
 def reverse_list(array:list):
@@ -32,7 +33,21 @@ def print_odd_index_values(array:list):
 
 
 
-print(print_odd_index_values([1,2,3,4,5,6,7,8,9]))
+def print_even_index_values(array:list):
+	if type(array) is list:
+		even_array = []
+		for i in range(0, len(array), 2):
+			print(array[i], end=",")
+			even_array.append(array[i])
+		return even_array
+	raise TypeError
+
+def array_contain_only_numbers(array)
+	for i in array:
+		if type(i) not in [int, float]:
+			return False
+	return True
+
 		
 
 
