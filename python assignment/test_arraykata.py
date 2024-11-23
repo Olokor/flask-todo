@@ -81,6 +81,27 @@ class TestArrayKata(TestCase):
 		actual_result = check_palindrome("aba")
 		expected_result = "aba"
 		self.assertEqual(actual_result, expected_result)
+	def test_that_check_palindrome_raise_error_if_string_not_passsed(self):
+		self.assertRaises(TypeError, check_palindrome, 7890)
+	
+	def test_that_sum_of_array_element_exists(self):
+		sum_of_array_element([1,2,3])
+
+
+	def test_that_sum_of_array_element_returns_correct_result(self):
+	
+		actual_result = sum_of_array_element([1,2,3])
+		expected_result = 6
+		self.assertEqual(actual_result, expected_result)
+
+
+	def test_that_sum_of_aray_element_raise_erroe_if_array_not_passed(self):
+
+		self.assertRaises(TypeError, sum_of_array_element, "tyyuiu779")
+
+
+	
+
 
 
 

@@ -38,17 +38,17 @@ def print_even_index_values(array:list):
 		return even_array
 	raise TypeError
 
+# use this function where necessary!
 def array_contain_only_numbers(array):
 	for i in array:
 		if type(i) not in [int, float]:
 			return False
 	return True
-def sum_array_element(array:list):
-	if type(array) is list:
-		if array_contain_only_numbers:
-			sum = 0
-			for i in array:
-				sum += i
+def sum_array_element(array:list): #implemented with for loop
+	if type(array) is list and array_contain_only_numbers(array):
+		sum = 0
+		for i in array:
+			sum += i
 		return sum
 	raise TypeError
 
@@ -59,6 +59,18 @@ def check_palindrome(text:str):
 			return palindrome
 		return "does not have a possible palindrome"
 	raise TypeError
+def sum_of_array_element(array:list): #implemented with while loop
+	if type(array) is list and array_contain_only_numbers(array):
+		sum = 0
+		array_index = 0
+		iter = len(array)
+		while iter !=0:
+			sum += array[array_index]
+			array_index += 1
+			iter -= 1
+		return sum
+	raise TypeError
+
 
 
 
