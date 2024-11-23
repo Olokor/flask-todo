@@ -1,0 +1,37 @@
+from unittest import TestCase
+from arraykata import *
+
+class TestArrayKata(TestCase):
+	def test_that_get_max_function_exists(self):
+		get_max([0])
+
+	def test_that_function_returns_correct_result(self):
+		actual = get_max([1,2,3,5,4])
+		expected = 5
+		self.assertEqual(actual, expected)
+
+	def test_that_error_raised_if_list_not_passed(self):
+		self.assertRaises(TypeError, get_max, "45", 777)
+	
+	def test_that_reverse_list_exists(self):
+		reverse_list([0])
+	
+	def test_that_reverse_list_returns_correct_result(self):
+		actual_result = reverse_list([1,3,6,7,9])
+		expected_result = [9,7,6,3,1]
+		self.assertEqual(actual_result, expected_result)
+	
+
+
+	def test_that_reverse_list_raised_error_if_list_not_passed(self):
+		self.assertRaises(TypeError, reverse_list, "67")
+
+	def test_that_elementExist_exist(self):
+		elementExist(5, [1,2,3,4,5])
+
+	def test_that_elementExists_returns_correct_value(self):
+		actual_result = elementExist(5, [1,2,3,4,5])
+		expected_result = True
+		self.assertEqual(actual_result, expected_result)
+
+	
