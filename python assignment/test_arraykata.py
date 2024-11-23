@@ -29,9 +29,13 @@ class TestArrayKata(TestCase):
 	def test_that_elementExist_exist(self):
 		elementExist(5, [1,2,3,4,5])
 
-	def test_that_elementExists_returns_correct_value(self):
+	def test_that_elementExist_returns_correct_value(self):
 		actual_result = elementExist(5, [1,2,3,4,5])
 		expected_result = True
 		self.assertEqual(actual_result, expected_result)
+
+
+	def test_that_elementExist_returns_correct_value(self):
+		self.assertRaises(TypeError, elementExist, "5", "yer")
 
 	
