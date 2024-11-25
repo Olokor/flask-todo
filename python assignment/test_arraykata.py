@@ -95,9 +95,56 @@ class TestArrayKata(TestCase):
 		self.assertEqual(actual_result, expected_result)
 
 
-	def test_that_sum_of_aray_element_raise_erroe_if_array_not_passed(self):
+	def test_that_sum_of_aray_element_raise_error_if_array_not_passed(self):
 
 		self.assertRaises(TypeError, sum_of_array_element, "tyyuiu779")
+
+	def test_that_concatenate_arrays_exist(self):
+		concatenate_arrays([1,2,3], ["a", "b", "c"])
+
+	def test_that_concatenate_arrays_returns_correct_result(self):
+		actual_result = concatenate_arrays([1,2,3], ["a", "b", "c"])
+		expected_result = [1,2,3,"a","b","c"]
+		
+
+		self.assertEqual(actual_result, expected_result)
+
+	def test_that_concatenate_arrays_raise_erroe_if_array_not_passed(self):
+		self.assertRaises(TypeError, concatenate_arrays, "87", "90")
+
+
+	def test_that_concatenate_arrays_by_alternating_elements_exist(self):
+	
+		concatenate_arrays_by_alternating_elements([1,2,3], ["a", "b", "c"])
+
+	def test_that_concatenate_arrays_by_alternating_elements_returns_correct_result(self):
+
+		actual_result = concatenate_arrays_by_alternating_elements([1, 2, 3], ["a", "b", "c", "d", "e"])
+		expected_result = [1,"a", 2, "b", 3, "c", "d", "e"]
+		self.assertEqual(actual_result, expected_result)
+
+	def test_that_concatenate_arrays_by_alternating_elements_raise_error_if_list_not_passed(self):
+
+		self.assertRaises(TypeError, concatenate_arrays_by_alternating_elements, "78", "890")
+
+	def test_that_number_to_array_exist(self):
+		number_to_array(300)
+
+	def test_that_number_to_array_returns_correct_result(self):
+		actual_result = number_to_array(4564)
+		expected_result = [4,5,6,4]
+		self.assertEqual(actual_result, expected_result)
+
+
+	def test_that_number_to_array_raise_error_if_int_not_passed(self):
+
+		self.assertRaises(TypeError, number_to_array, "yuutu")
+
+
+
+
+
+	
 
 
 	

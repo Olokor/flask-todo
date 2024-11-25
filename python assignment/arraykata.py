@@ -71,7 +71,52 @@ def sum_of_array_element(array:list): #implemented with while loop
 		return sum
 	raise TypeError
 
+def concatenate_arrays(array1:list, array2:list):
+	if type(array1) is list and type(array2) is list:
 
+		return array1 + array2
+	raise TypeError
+
+def return_short_array_length(array1:list, array2:list):
+	if len(array1) == len(array2) or len(array1) < len(array2):
+		return len(array1), array1
+	return len(array2), array2
+
+def concatenate_arrays_by_alternating_elements(array1:list, array2:list):
+	if type(array1) is list and type(array2) is list:
+		final_array = []
+		if len(array1) == len(array2):
+			for i in range(len(array1)):
+				final_array.append(array1[i])
+				final_array.append(array2[i])
+			return final_array
+		for i in range(return_short_array_length(array1,array2)[0]):
+			final_array.append(array1[i])
+			final_array.append(array2[i])
+		if return_short_array_length(array1, array2)[1] == array1:
+			final_array += array2[len(array1):]
+			return final_array
+		final_array += array1[len(array2):]
+
+		return final_array
+	
+	raise TypeError
+
+
+def number_to_array(number:int):
+	if type(number) is int:
+		array = []
+		for i in str(number):
+			array.append(int(i))
+		return array
+	raise TypeError
+
+
+
+		
+				
+			
+		
 
 
 
