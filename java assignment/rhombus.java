@@ -16,7 +16,7 @@ public class rhombus{
             System.out.println();
             space--;
         }
-        space = 1;
+        space = 2;
         
         for (int i=(numberOfLetters-2); i>=0; i--){
             for (int s = 0; s < space; s++) {
