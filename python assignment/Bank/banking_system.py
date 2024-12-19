@@ -131,7 +131,9 @@ class AccountManager:
             case _:
                 session = self.login_account()
                 if session and session[0]:
-                    ...
+                    print(session[1])
+            
+            
 
 
         
