@@ -57,7 +57,7 @@ public class PhoneBook{
                 return contact;
             }
         }
-        return  null;
+        return null;
     }
 
     private void editContact(String input){
@@ -98,6 +98,7 @@ public class PhoneBook{
     }
 
     public void phoneBookInterface(){
+        while(true){
         System.out.println("""
             1. create contact
             2. edit contact
@@ -130,7 +131,7 @@ public class PhoneBook{
                 }
 
             }
-
+        }
     }
 
     private boolean checkPhoneNumber(String phoneNumber){
