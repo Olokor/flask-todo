@@ -105,11 +105,7 @@ public class AccountManager{
     System.out.println("""
         Welcome to the USSD interface.
         1. Create account
-        2. Check account balance
-        3. Withdraw money
-        4. Recharge line (personal)
-        5. Recharge line (external)
-        6. Login
+        2. Login
         >>>>>> """);
 
     String input = System.console().readLine();
@@ -128,7 +124,7 @@ public class AccountManager{
             System.out.println(accounts);
         }
 
-        case "6" -> loggedInUser = login();
+        case "2" -> loggedInUser = login();
 
         default -> System.out.println("Invalid option. Please try again.");
     }
@@ -150,9 +146,9 @@ public class AccountManager{
             6. Exit
             >>>>>> """);
 
-        String prompt = System.console().readLine();
+        String entry = System.console().readLine();
 
-        switch (prompt) {
+        switch (entry) {
             case "1" -> {
                 double balance = getBalance(loggedInUser);
                 System.out.println("Your current balance is: " + balance);
