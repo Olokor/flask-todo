@@ -1,7 +1,6 @@
 
 import java.util.ArrayList;
 
-
 public class AccountManager{
     private ArrayList<CreateAccount> accounts = new ArrayList<>();
 
