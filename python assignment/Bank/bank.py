@@ -202,7 +202,7 @@ class AccountManager:
     def _check_phone_number(phone_number:str):
         if "+234" in phone_number:
             try:
-                number = int(phone_number)
+                number = int(phone_number[3:])
                 return True
             except ValueError:
                 return False

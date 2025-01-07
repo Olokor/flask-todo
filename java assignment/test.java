@@ -1,3 +1,7 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Scanner;
+
 public class test{
     // public static void main(String[] args){
     //     for (int i=5; i>0; i--){
@@ -12,18 +16,27 @@ public class test{
         // // Integer and String 
         // System.out.println(i instanceof String); 
 
-        System.out.println(Integer.MAX_VALUE);
-        int number = Integer.parseInt(System.console().readLine("enter number: "));
+        // System.out.println(Integer.MAX_VALUE);
+        // int number = Integer.parseInt(System.console().readLine("enter number: "));
 
-        long factorial = 1;
-		if (number == 0){
-			System.out.println(1);
-		}
-		for (int i=number; i>=1; i--){
-			System.out.println("i is now "+i);
-			factorial *=i;
-		}
-		System.out.println(factorial);
-    }
+        // long factorial = 1;
+		// if (number == 0){
+		// 	System.out.println(1);
+		// }
+		// for (int i=number; i>=1; i--){
+		// 	System.out.println("i is now "+i);
+		// 	factorial *=i;
+		// }
+		// System.out.println(factorial);
+        ArrayList<String> list = new ArrayList<>();
+        Scanner scanner = new Scanner(System.in);
+        
+        String line = scanner.nextLine();  // Read just one line
+        String[] values = line.split(",");
+        list.addAll(Arrays.asList(values));
+        
+        System.out.println(list);
+        scanner.close();
+            }
 
 }
