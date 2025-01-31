@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class test{
@@ -31,12 +30,15 @@ public class test{
         ArrayList<String> list = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
         
-        String line = scanner.nextLine();  // Read just one line
-        String[] values = line.split(",");
-        list.addAll(Arrays.asList(values));
+        // String line = scanner.nextLine();  // Read just one line
+        // String[] values = line.split(",");
+        // list.addAll(Arrays.asList(values));
         
-        System.out.println(list);
-        scanner.close();
+        // System.out.println(list);
+        // scanner.close();
+
+        int maxIntValue = Integer.MAX_VALUE;
+        System.out.println("yhe maximum value of an integer class = "+maxIntValue);
             }
 
 }
