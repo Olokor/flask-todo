@@ -33,15 +33,16 @@ class Grading_system:
 
                 else:
                     break
-            
-            # for j in range(number_of_subject):
-            #     scores[i][j] = grade[j]
+
 
             for j in range(len(grades)):
                 grades[j] = int(grades[j])
             scores.append(grades)
             self.success_message()
         return scores
+
+
+
 
             
     def get_student_average(self, score:list, number_of_subject:int):
@@ -64,7 +65,7 @@ class Grading_system:
             sum = 0
         return total_score
 
-    def get_student_position(student_average: list, number_of_student: int):
+    def get_student_position(self, student_average: list, number_of_student: int):
         student_position = []
 
         for i in range(number_of_student):
@@ -75,6 +76,83 @@ class Grading_system:
             student_position.append(position)  # Store position in the list
 
         return student_position
+
+    def subject_summary(self, scores: list, number_of_subject: int) -> None:
+        highest_score = 0
+        lowest_score = 100
+        number_of_passes = 0
+        number_of_failures = 0
+        highest_students = ""
+        lowest_students = ""
+        total_score = 0
+        subject_index = 0
+        average_score = 0
+
+        for score in scores:
+            for i in range(len(score)):
+                # Track highest score
+                if score[i] > highest_score:
+                    highest_score = score[i]
+                    highest_students = self.students[i]
+
+                # Track lowest score
+                if score[i] < lowest_score:
+                    lowest_score = score[i]
+                    lowest_students = self.students[i]
+
+                # Count passes and failures correctly
+                if score[i] < 39:
+                    number_of_failures += 1
+                else:
+                    number_of_passes += 1
+
+                total_score += score[i]
+
+            if subject_index < number_of_subject:
+                print(f"For {self.subjects[subject_index]}")
+
+            average_score = total_score / number_of_subject
+
+            print(f"""
+            {"=" * 25}
+            Highest scoring student: {highest_students} - {highest_score}
+            {"=" * 25}
+            Lowest scoring student: {lowest_students} - {lowest_score}
+            {"=" * 25}
+            Total score: {total_score}
+            Average score: {average_score:.2f}
+            Number of passes: {number_of_passes}
+            Number of failures: {number_of_failures}
+            """)
+
+            # Reset values for next subject
+            subject_index += 1
+            total_score = 0
+            highest_score = 0  # Reset highest score
+            lowest_score = 100  # Reset lowest score
+            highest_students = ""
+            lowest_students = ""
+            number_of_passes = 0
+            number_of_failures = 0
+
+    def sample_output(self, position:list, total_score:list, average_score:list, scores:list):
+        print("=" * 70 + "\nstudent\t", end="")
+
+        for subject in self.subjects:
+            print(f"\t {subject} ", end="")
+
+        print("\t     TOT      AVG      POS  ")
+        print("=" * 70)
+
+        for i in range(len(scores)):
+            print(f"{self.students[i]}\t", end="")
+            for j in range(len(self.subjects)):
+                print(f"{scores[i][j]:.2f}    ", end="")
+            print(f"{total_score[i]:.2f}    {average_score[i]:.2f}      {position[i]}   ")
+
+        print("=" * 70 + "\n")
+        print("=" * 70)
+
             
     @staticmethod
     def _check_scores(grades):
@@ -97,3 +175,5 @@ print(scores)
 print(average)
 print(total_score)
 print(posiyion)
+system.subject_summary(scores,2)
+system.sample_output(posiyion,total_score,average,scores)
