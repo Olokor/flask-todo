@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Customer extends User {
 
-    private List<Items> shoppingCart = new ArrayList<>();
+    private List<Product> shoppingCart = new ArrayList<>();
     private CreditCardInformation cardDetails;
     public Customer(int age, String name, String email, String homeAddress, String phoneNumber,
                     int cvv, String expMonth, String expYear, String cardNumber) {
@@ -15,7 +15,7 @@ public class Customer extends User {
 
 
 
-    public List<Items> getShoppingCart() {
+    public List<Product> getShoppingCart() {
         return shoppingCart;
     }
 
@@ -24,8 +24,9 @@ public class Customer extends User {
     }
 
 
-
-
+    public CreditCardInformation getCardDetails() {
+        return cardDetails;
+    }
 }
 
 
