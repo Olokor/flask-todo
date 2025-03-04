@@ -45,7 +45,7 @@ class Grading_system:
 
 
             
-    def get_student_average(self, score:list, number_of_subject:int):
+    def get_student_average(self, score:list, number_of_subject:int)->list[float]:
         average = []
         sum = 0
         for i in range(len(score)): #[[45,67], [56,89], [57,90]]
@@ -55,7 +55,7 @@ class Grading_system:
             sum = 0
         return average
 
-    def get_student_total_score(self, score:list, number_of_subject:int):
+    def get_student_total_score(self, score:list)->list[int]:
         total_score = []
         sum = 0
         for i in range(len(score)): #[[45,67], [56,89], [57,90]]
@@ -88,7 +88,7 @@ class Grading_system:
         subject_index = 0
         average_score = 0
 
-        for score in scores:
+        for score in scores: #[[89,90], [76,86], [76,50]]
             for i in range(len(score)):
                 # Track highest score
                 if score[i] > highest_score:
@@ -169,7 +169,7 @@ class Grading_system:
 system = Grading_system(2, 2)
 scores = system.collect_scores(2,2)
 average = system.get_student_average(scores,2)
-total_score = system.get_student_total_score(scores,2)
+total_score = system.get_student_total_score(scores)
 posiyion = system.get_student_position(average, 2)
 print(scores)
 print(average)
