@@ -62,4 +62,4 @@ def update(id):
 
 if __name__ == '__main__':
     # create_tables()  # This will create the database when you run the app
-    app.run(debug=True)
+    app.run(debug=False)
